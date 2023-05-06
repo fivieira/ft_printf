@@ -6,12 +6,12 @@
 #    By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/22 16:05:24 by fivieira          #+#    #+#              #
-#    Updated: 2023/05/04 10:21:02 by fivieira         ###   ########.fr        #
+#    Updated: 2023/05/06 16:45:55 by fivieira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-SRC = ft_atoi.c ft_bzero.c 
+SRC = ft_printf.c
 
 OBJS = ${SRC:.c=.o}
 
@@ -36,9 +36,11 @@ $(NAME): ${OBJS}
 all:    ${NAME}
 
 clean:
+		${MAKE} ${LIBFT_PATH} clean
 		${RM} ${OBJS} 
 
 fclean: clean
+		${MAKE} ${LIBFT_PATH} clean
 		${RM} ${NAME}
 
 tclean: clean
@@ -46,8 +48,4 @@ tclean: clean
 
 re: fclean all
 
-teste:
-		${CC} ${CFLAGS} ${INCLUDE} main.c ${NAME} -o teste
-
-
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
