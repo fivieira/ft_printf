@@ -8,6 +8,10 @@ int	handle_string(char *str)
 	counter = 0;
 	if (!str)
 		str = EXCEPTION_STR;
-		
-	
+	while (str[counter] != '\0')
+	{
+		counter = counter + ft_putchar(str[counter]);
+		counter++;
+	}
+	return (counter);
 }

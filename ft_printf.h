@@ -31,6 +31,11 @@ int		handle_char(char c);
 int		handle_string(char *str);
 int		handle_pointer(void *ptr_addr);
 int		handle_decimal(signed long value);
+int		handle_unsigned_decimal(unsigned int value);
+int		handle_hexadecimal(unsigned int	value);
+int		handle_hexadecimal_upper(unsigned int value);
+int		handle_percent(char c);
+int		is_argument(int c);
 
 int		ft_printf(const char *str, ...);
 
