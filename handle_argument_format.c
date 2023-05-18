@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 09:45:49 by fivieira          #+#    #+#             */
-/*   Updated: 2023/05/18 10:17:47 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/05/18 14:01:54 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ int	handle_argument_format(int c, va_list args)
 	int	counter;
 
 	counter = 0;
-	if (c == 'i' || c == 'd')
-		counter = handle_decimal(va_arg(args, signed long));
 	if (c == 'c')
 		counter = handle_char(va_arg(args, int));
 	if (c == 's')
 		counter = handle_string(va_arg(args, char *));
 	if (c == 'p')
 		counter = handle_pointer(va_arg(args, void *));
+	if (c == 'i' || c == 'd')
+		counter = handle_decimal(va_arg(args, signed int));
 	if (c == 'u')
 		counter = handle_unsigned_decimal(va_arg(args, unsigned int));
 	if (c == 'x')

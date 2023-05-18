@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 16:50:51 by fivieira          #+#    #+#             */
-/*   Updated: 2023/04/21 17:01:00 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/05/18 12:00:14 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	*ft_calloc(size_t nitems, size_t size)
 	{
 		return (NULL);
 	}
-	ft_memset(tam, 0, total_size);
-	return ((void *)tam);
+	ft_bzero(tam, total_size);
+	return (tam);
 }
 
 // int	main(void)

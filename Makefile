@@ -6,13 +6,13 @@
 #    By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/22 16:05:24 by fivieira          #+#    #+#              #
-#    Updated: 2023/05/18 10:39:17 by fivieira         ###   ########.fr        #
+#    Updated: 2023/05/18 10:42:05 by fivieira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRC = ft_putchar ft_printf.c is_argument.c handle_argument_format.c handle_char.c handle_decimal.c handle_hexadecimal.c handle_percent.c handle_pointer.c \
+SRC = ft_printf.c is_argument.c handle_argument_format.c handle_char.c handle_decimal.c handle_hexadecimal.c handle_percent.c handle_pointer.c \
 handle_string.c handle_unsigned_decimal.c
 
 OBJS = ${SRC:.c=.o}

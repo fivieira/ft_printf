@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 10:22:35 by fivieira          #+#    #+#             */
-/*   Updated: 2023/05/18 10:34:43 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/05/18 12:19:51 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	handle_input(const char *str, va_list args)
 	while (str[i])
 	{
 		if (str[i] != '%')
-			counter = counter + ft_putchar(str[i]);
+			counter += ft_putchar(str[i]);
 		else if ((str[i] == '%') && str[i + 1])
 		{
 			i++;

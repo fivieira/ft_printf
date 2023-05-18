@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 09:45:26 by fivieira          #+#    #+#             */
-/*   Updated: 2023/05/18 10:22:08 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/05/18 12:18:40 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	handle_string(char *str)
 	while (str[counter] != '\0')
 	{
 		counter = counter + ft_putchar(str[counter]);
-		counter++;
 	}
 	return (counter);
 }

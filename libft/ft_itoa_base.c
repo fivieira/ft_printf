@@ -6,35 +6,11 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 10:12:33 by fivieira          #+#    #+#             */
-/*   Updated: 2023/05/18 10:16:07 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/05/18 10:45:20 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-static void	ft_bzero(void *s, size_t n)
-{
-	unsigned char	*ptr;
-
-	ptr = (unsigned char *)s;
-	while (n > 0)
-	{
-		*ptr = 0;
-		ptr++;
-		n--;
-	}
-}
-
-static void	*ft_calloc(size_t count, size_t size)
-{
-	void	*ptr;
-
-	ptr = malloc(size * count);
-	if (ptr == NULL)
-		return (NULL);
-	ft_bzero(ptr, size * count);
-	return (ptr);
-}
+#include "libft.h"
 
 static size_t	ft_intlen_base(unsigned long long n, char *base)
 {
@@ -51,7 +27,7 @@ static size_t	ft_intlen_base(unsigned long long n, char *base)
 	return (len);
 }
 
-char	*itoa_base(unsigned long long n, char *base)
+char	*ft_itoa_base(unsigned long long n, char *base)
 {
 	char	*str;
 	int		numlen;
