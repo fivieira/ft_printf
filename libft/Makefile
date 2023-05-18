@@ -6,14 +6,23 @@
 #    By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/22 16:05:24 by fivieira          #+#    #+#              #
-#    Updated: 2023/05/18 10:39:17 by fivieira         ###   ########.fr        #
+#    Updated: 2023/05/18 10:11:02 by fivieira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME = libft.a
+SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
+ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
+ft_memmove.c ft_memset.c ft_strchr.c ft_strlcat.c ft_strlcpy.c \
+ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c \
+ft_toupper.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c \
+ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
+ft_putnbr_fd.c
 
-SRC = ft_putchar ft_printf.c is_argument.c handle_argument_format.c handle_char.c handle_decimal.c handle_hexadecimal.c handle_percent.c handle_pointer.c \
-handle_string.c handle_unsigned_decimal.c
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
+BONUS_OBJS = ${BONUS:.c=.o}
 
 OBJS = ${SRC:.c=.o}
 
@@ -24,31 +33,29 @@ CC = cc
 RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror
-
-MAKE = make -C
-
-LIBFT_PATH = libft
-
-LIBFT = ${LIBFT_PATH}/libft.a
-
 .c.o:
 		${CC} ${CFLAGS} ${INCLUDE} -c $< -o ${<:.c=.o}
 
 $(NAME): ${OBJS}
-		${MAKE} ${LIBFT_PATH} all
-		cp ${LIBFT} ${NAME}
 		ar rcs ${NAME} ${OBJS}
 
 all:    ${NAME}
 
 clean:
-		${MAKE} ${LIBFT_PATH} clean
-		${RM} ${OBJS} 
+		${RM} ${OBJS} ${BONUS_OBJS}
 
 fclean: clean
-		${MAKE} ${LIBFT_PATH} fclean
 		${RM} ${NAME}
+
+tclean: clean
+		${RM} teste
 
 re: fclean all
 
-.PHONY: all clean fclean re
+teste:
+		${CC} ${CFLAGS} ${INCLUDE} main.c ${NAME} -o teste
+
+bonus: ${OBJS} ${BONUS_OBJS}
+				ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}
+
+.PHONY: all clean fclean re bonus

@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_argument_format.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/18 09:45:49 by fivieira          #+#    #+#             */
+/*   Updated: 2023/05/18 10:17:47 by fivieira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
 int	handle_argument_format(int c, va_list args)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (c == 'i' || c == 'd')
@@ -13,15 +24,14 @@ int	handle_argument_format(int c, va_list args)
 	if (c == 's')
 		counter = handle_string(va_arg(args, char *));
 	if (c == 'p')
-		counter = handle_pointer(va_arg(args, long unsigned int));
+		counter = handle_pointer(va_arg(args, void *));
 	if (c == 'u')
 		counter = handle_unsigned_decimal(va_arg(args, unsigned int));
 	if (c == 'x')
-		counter = handle_hexadecimal(va_arg(args,unsigned int));
+		counter = handle_hexadecimal(va_arg(args, unsigned int));
 	if (c == 'X')
 		counter = handle_hexadecimal_upper(va_arg(args, unsigned int));
 	if (c == '%')
 		counter = handle_percent(c);
-	return (counter);	
-
+	return (counter);
 }

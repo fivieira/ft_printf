@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_hexadecimal.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/18 09:45:37 by fivieira          #+#    #+#             */
+/*   Updated: 2023/05/18 10:20:51 by fivieira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	handle_hexadecimal(unsigned int	value)
+int	handle_hexadecimal(unsigned int value)
 {
 	int		counter;
 	char	*str;

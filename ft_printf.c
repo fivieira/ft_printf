@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 10:22:35 by fivieira          #+#    #+#             */
-/*   Updated: 2023/05/06 16:58:56 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/05/18 10:34:43 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,11 @@ static int	handle_input(const char *str, va_list args)
 	return (counter);
 }
 
-
 int	ft_printf(const char *fmt, ...)
 {
-	va_list	args;
+	va_list		args;
 	const char	*str;
-	int	counter;
+	int			counter;
 
 	counter = 0;
 	str = ft_strdup(fmt);
